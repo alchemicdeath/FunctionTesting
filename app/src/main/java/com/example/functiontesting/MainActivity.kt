@@ -3,6 +3,7 @@ package com.example.functiontesting
 import android.os.Bundle
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import kotlin.math.pow
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity()
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity()
         val numberQ = 11
         val numberP = 5
         val phiNum =  phi(55)
+        val msg = "Hello"
 
         var primeP = randomPrime(256)
         var primeQ = randomPrime(256)
@@ -39,7 +41,7 @@ class MainActivity : AppCompatActivity()
         {
             primeP = randomPrime(256)
         }
-        
+
         while (isPrime(primeQ))
         {
             primeQ = randomPrime(256)
@@ -54,6 +56,14 @@ class MainActivity : AppCompatActivity()
         val numQ = 11
         val numN = numP*numQ
         val numE = phi(numN)
+
+
+    }
+
+    fun encrypt(msg : String, p : Int, q : Int, n : Int, e : Double, d : Int)
+    {
+        var msgInt = msg.toDouble()
+        var C = msgInt.pow(e)
 
 
     }
